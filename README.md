@@ -1,4 +1,4 @@
-# 🥗 MacroMitra (मैक्रोमित्र)
+# 🥗 MacroMitra
 > **Your Intelligent Indian Nutrition & Macro Meal Planning Companion**
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
