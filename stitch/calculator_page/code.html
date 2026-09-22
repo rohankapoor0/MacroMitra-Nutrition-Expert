@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MacroMitra - Precision Nutrition Calculator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dae2fd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#002109",
+                        "tertiary-fixed-dim": "#ffb2bf",
+                        "background": "#faf8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8a143c",
+                        "surface-tint": "#006e2d",
+                        "on-primary-fixed-variant": "#005320",
+                        "on-primary-container": "#f7fff2",
+                        "tertiary-fixed": "#ffd9de",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#3b6842",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary-container": "#baecbc",
+                        "surface-bright": "#faf8ff",
+                        "surface-container": "#eaedff",
+                        "on-primary-fixed": "#002109",
+                        "inverse-surface": "#283044",
+                        "surface-container-high": "#e2e7ff",
+                        "primary": "#006b2c",
+                        "on-secondary-fixed-variant": "#23502c",
+                        "on-secondary-container": "#406c46",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-container": "#c74668",
+                        "on-tertiary-fixed": "#3f0016",
+                        "on-tertiary-container": "#fffbff",
+                        "on-background": "#131b2e",
+                        "primary-container": "#00873a",
+                        "inverse-primary": "#62df7d",
+                        "secondary-fixed-dim": "#a1d3a4",
+                        "on-surface": "#131b2e",
+                        "tertiary": "#a72d51",
+                        "outline-variant": "#bdcaba",
+                        "error": "#ba1a1a",
+                        "outline": "#6e7b6c",
+                        "surface-dim": "#d2d9f4",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#7ffc97",
+                        "secondary-fixed": "#bdefbe",
+                        "surface-container-highest": "#dae2fd",
+                        "surface": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#62df7d",
+                        "on-surface-variant": "#3e4a3d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .asymmetric-bg {
+            background: radial-gradient(circle at top right, #f7fff2 0%, #faf8ff 50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen asymmetric-bg">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/10 dark:border-slate-700/10 shadow-[0px_20px_40px_rgba(19,27,46,0.06)] flex justify-between items-center px-8 py-3 z-50">
+<div class="text-2xl font-black tracking-tighter text-green-700 dark:text-green-400 font-inter">MacroMitra</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-green-600 dark:hover:text-green-300 transition-all hover:scale-105 active:scale-95 duration-200" href="#">Home</a>
+<a class="text-green-700 dark:text-green-400 font-semibold border-b-2 border-green-600 hover:text-green-600 dark:hover:text-green-300 transition-all hover:scale-105 active:scale-95 duration-200" href="#">Calculator</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-green-600 dark:hover:text-green-300 transition-all hover:scale-105 active:scale-95 duration-200" href="#">Meal Planner</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-semibold hover:scale-105 active:scale-95 transition-all duration-200">Get Started</button>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="text-5xl md:text-6xl font-black tracking-tight text-on-surface mb-4">Precision <span class="text-primary">Calculator.</span></h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">Input your biometric data to generate a bespoke nutritional blueprint tailored to your metabolic signature.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Input Form Card -->
+<section class="lg:col-span-5 bg-surface-container-lowest rounded-3xl p-8 shadow-[0px_20px_40px_rgba(19,27,46,0.04)] border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary p-2 bg-secondary-container/30 rounded-xl">analytics</span>
+<h2 class="text-2xl font-bold tracking-tight">Biometric Profile</h2>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Age</label>
+<input class="bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline" placeholder="25" type="number"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Gender</label>
+<select class="bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-on-surface">
+<option>Male</option>
+<option>Female</option>
+<option>Non-binary</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Weight (kg)</label>
+<input class="bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline" placeholder="70" type="number"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Height (cm)</label>
+<input class="bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-outline" placeholder="175" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Activity Level</label>
+<select class="bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-on-surface">
+<option>Sedentary (Office job)</option>
+<option>Lightly Active (1-2 days/week)</option>
+<option>Moderately Active (3-5 days/week)</option>
+<option>Very Active (6-7 days/week)</option>
+<option>Athlete (Professional training)</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Primary Goal</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-surface-container py-3 rounded-xl text-sm font-semibold hover:bg-primary hover:text-on-primary transition-all" type="button">Cut</button>
+<button class="bg-primary text-on-primary py-3 rounded-xl text-sm font-semibold shadow-lg shadow-primary/20" type="button">Maintain</button>
+<button class="bg-surface-container py-3 rounded-xl text-sm font-semibold hover:bg-primary hover:text-on-primary transition-all" type="button">Bulk</button>
+</div>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/10 hover:scale-[1.02] active:scale-95 transition-all mt-4">Calculate My Blueprint</button>
+</form>
+</section>
+<!-- Results Section -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Stat Cards: Tonal Layering -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/10">
+<p class="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-1">BMR</p>
+<h3 class="text-3xl font-black text-on-surface">1,840</h3>
+<p class="text-xs text-on-surface-variant mt-1">Basal Metabolism</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/10">
+<p class="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-1 text-primary">TDEE</p>
+<h3 class="text-3xl font-black text-on-surface">2,450</h3>
+<p class="text-xs text-on-surface-variant mt-1">Total Daily Energy</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/10">
+<p class="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-1 text-tertiary">Protein</p>
+<h3 class="text-3xl font-black text-on-surface">165g</h3>
+<p class="text-xs text-on-surface-variant mt-1">Daily Amino Target</p>
+</div>
+</div>
+<!-- Visualization Bento Box -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Donut Chart Display -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0px_20px_40px_rgba(19,27,46,0.04)] border border-outline-variant/10 flex flex-col items-center justify-center relative">
+<div class="w-48 h-48 rounded-full border-[18px] border-surface-container-low relative flex items-center justify-center">
+<!-- Simulated Gradient Segments with borders for the "living" feel -->
+<div class="absolute inset-0 rounded-full border-[18px] border-primary border-t-transparent border-l-transparent rotate-45"></div>
+<div class="absolute inset-0 rounded-full border-[18px] border-secondary-container border-b-transparent border-r-transparent -rotate-12"></div>
+<div class="absolute inset-0 rounded-full border-[18px] border-tertiary/60 border-t-transparent border-r-transparent rotate-[160deg]"></div>
+<div class="text-center">
+<span class="block text-4xl font-black">2,450</span>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">KCAL</span>
+</div>
+</div>
+<div class="mt-8 flex gap-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-xs font-medium">Carbs</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="text-xs font-medium">Fats</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs font-medium">Protein</span>
+</div>
+</div>
+</div>
+<!-- Progress Details -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0px_20px_40px_rgba(19,27,46,0.04)] border border-outline-variant/10 space-y-8">
+<div>
+<div class="flex justify-between items-end mb-3">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">Protein Needs</span>
+<span class="text-xl font-black">165<span class="text-sm font-normal text-on-surface-variant">g</span></span>
+</div>
+<div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[75%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-3">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">Carbohydrates</span>
+<span class="text-xl font-black">245<span class="text-sm font-normal text-on-surface-variant">g</span></span>
+</div>
+<div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[55%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-3">
+<span class="text-xs font-bold tracking-widest text-on-surface-variant uppercase">Dietary Fats</span>
+<span class="text-xl font-black">68<span class="text-sm font-normal text-on-surface-variant">g</span></span>
+</div>
+<div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[40%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lifestyle Visual -->
+<div class="relative h-64 rounded-3xl overflow-hidden group">
+<img alt="Healthy meal preparation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist overhead shot of a vibrant salad bowl with grilled salmon, avocados, and fresh greens on a clean white surface with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM_fx9eqm-uU6mk0FSd2oOZYSZAj6oa_CwhTDLkD2tM6Vg5Oe6HHCrPeXm85VI2xDRrnuO-SYTgPS23w1_LBmAlzDL3LXssMv-REdrs0GZcKNbknb_X9ZCcUe5UxWcLxPPTlq527cxqWSe_FM6X8QJLnqe9Jr_qt4pUv9udSySZizeaEjU3N2T3u7rH-R15mrAWVHwnAp6paUZCcvGLBEJWwsSw-oqSGepYbj16PEFnNtMwx8_biPzV-737QRSyQ-Z6GOzAIyMEYM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent flex items-end p-8">
+<div>
+<h4 class="text-white text-2xl font-bold tracking-tight">Fuel for performance.</h4>
+<p class="text-white/80 text-sm max-w-sm mt-2">These numbers are your foundation. Use our Meal Planner to turn this data into real food.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/15 dark:border-slate-800/15 bg-slate-50 dark:bg-slate-950 mt-12">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100 font-inter">MacroMitra</div>
+<div class="flex gap-8">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:text-green-600 transition-colors" href="#">About</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:text-green-600 transition-colors" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:text-green-600 transition-colors" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:text-green-600 transition-colors" href="#">Support</a>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-inter">© 2024 MacroMitra. Precision Nutrition.</p>
+</div>
+</footer>
+</body></html>
