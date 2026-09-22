@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #006b2c;
+  --color-primary-container: #00873a;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary-container: #f2f3ff;
+  --color-on-secondary-container: #131b2e;
+  
+  --color-tertiary: #a72d51;
+  --color-tertiary-container: #ffd9df;
+  
+  --color-surface: #faf8ff;
+  --color-surface-container-low: #f2f3ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #131b2e;
+  --color-outline-variant: rgba(19, 27, 46, 0.15);
+  
+  --font-inter: "Inter", sans-serif;
+  
+  --shadow-ambient: 0px 20px 40px rgba(19, 27, 46, 0.06);
+  --shadow-card: 0px 4px 12px rgba(19, 27, 46, 0.04);
+  
+  --radius-xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-inter antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-[20px] bg-white/80 border border-white/20;
+  }
+  
+  .card-island {
+    @apply bg-surface-container-lowest rounded-xl shadow-ambient border border-outline-variant;
+  }
+
+  .label-tier {
+    @apply text-[10px] font-black uppercase tracking-[0.05em] text-on-surface/50;
+  }
+
+  .display-lg {
+    @apply text-5xl md:text-7xl font-black tracking-[-0.02em] leading-none;
+  }
+
+  .title-lg {
+    @apply text-2xl font-black tracking-tight;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(19, 27, 46, 0.1);
+  border-radius: 10px;
+}
