@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MacroMitra | Precision Nutrition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-variant": "#dae2fd",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-fixed": "#002109",
+                "tertiary-fixed-dim": "#ffb2bf",
+                "background": "#faf8ff",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed-variant": "#8a143c",
+                "surface-tint": "#006e2d",
+                "on-primary-fixed-variant": "#005320",
+                "on-primary-container": "#f7fff2",
+                "tertiary-fixed": "#ffd9de",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "secondary": "#3b6842",
+                "surface-container-low": "#f2f3ff",
+                "secondary-container": "#baecbc",
+                "surface-bright": "#faf8ff",
+                "surface-container": "#eaedff",
+                "on-primary-fixed": "#002109",
+                "inverse-surface": "#283044",
+                "surface-container-high": "#e2e7ff",
+                "primary": "#006b2c",
+                "on-secondary-fixed-variant": "#23502c",
+                "on-secondary-container": "#406c46",
+                "inverse-on-surface": "#eef0ff",
+                "tertiary-container": "#c74668",
+                "on-tertiary-fixed": "#3f0016",
+                "on-tertiary-container": "#fffbff",
+                "on-background": "#131b2e",
+                "primary-container": "#00873a",
+                "inverse-primary": "#62df7d",
+                "secondary-fixed-dim": "#a1d3a4",
+                "on-surface": "#131b2e",
+                "tertiary": "#a72d51",
+                "outline-variant": "#bdcaba",
+                "error": "#ba1a1a",
+                "outline": "#6e7b6c",
+                "surface-dim": "#d2d9f4",
+                "on-secondary": "#ffffff",
+                "primary-fixed": "#7ffc97",
+                "secondary-fixed": "#bdefbe",
+                "surface-container-highest": "#dae2fd",
+                "surface": "#faf8ff",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "primary-fixed-dim": "#62df7d",
+                "on-surface-variant": "#3e4a3d"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-2xl glass-nav border border-slate-200/10 shadow-[0px_20px_40px_rgba(19,27,46,0.06)] flex justify-between items-center px-8 py-3 z-50">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-black tracking-tighter text-green-700">MacroMitra</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-green-700 font-semibold border-b-2 border-green-600 transition-all hover:scale-105 duration-200" href="#">Home</a>
+<a class="text-slate-600 font-medium hover:text-green-600 transition-all hover:scale-105 duration-200" href="#">Calculator</a>
+<a class="text-slate-600 font-medium hover:text-green-600 transition-all hover:scale-105 duration-200" href="#">Meal Planner</a>
+</nav>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm active:scale-95 transition-all hover:scale-105 shadow-md">
+            Get Started
+        </button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-40 pb-20 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+<div class="flex-1 space-y-8 z-10">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">
+                        Precision Nutrition
+                    </div>
+<h1 class="text-5xl lg:text-7xl font-black text-on-surface tracking-tighter leading-[1.05]">
+                        Master Your Health with <span class="text-primary italic">Clinical</span> Accuracy.
+                    </h1>
+<p class="text-lg lg:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Stop guessing your macros. MacroMitra uses advanced physiological modeling to create a bespoke nutrition path designed specifically for your unique metabolism.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold text-lg active:scale-95 transition-all hover:scale-105 shadow-lg shadow-primary/20">
+                            Start Your Journey
+                        </button>
+<button class="bg-surface-container-low text-on-surface px-8 py-4 rounded-full font-bold text-lg active:scale-95 transition-all hover:scale-105">
+                            Learn How It Works
+                        </button>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="relative rounded-[2.5rem] overflow-hidden shadow-[0px_40px_80px_rgba(19,27,46,0.12)] border-8 border-surface-container-lowest">
+<img alt="Precision Nutrition" class="w-full aspect-[4/5] object-cover" data-alt="Modern minimalist kitchen scene with fresh green vegetables, a digital scale, and a vibrant healthy salad bowl in soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQLZ86_XpXWjBFpQiV_v9Y08OImFMAgKX-KwRkl4F3qpzdww2ciSOphe9ecS_HwEqjDwtUXLXUKB0GfYSPOjj5Yygeb2nnKHsm7YDo4xkBDYBJcr6Rbkmw-vLlxRKbEk8CUPhwEnAWly94g7XVOIUl2wQNudzhRQe-Ia0UrHK88zd848r3pM01zBH7aPS5sdapKquNTq-OTs-Cg8as9yfKIndZrDSZDbPhedAfvr5RUdABSlYv0fu3L4Fc90eTUJUqLfFvL6qdquU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid Section -->
+<section class="py-24 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-3xl lg:text-5xl font-black text-on-surface tracking-tight mb-4">Crafted for Excellence</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our ecosystem integrates every facet of your nutritional biology into a single, elegant dashboard.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] shadow-[0px_20px_40px_rgba(19,27,46,0.04)] hover:shadow-[0px_30px_60px_rgba(19,27,46,0.08)] transition-all duration-300">
+<div class="w-14 h-14 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-3xl">calculate</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Precision Calculator</h3>
+<p class="text-on-surface-variant leading-relaxed">Advanced algorithms that go beyond BMI, calculating your exact metabolic needs based on activity, age, and lean mass.</p>
+</div>
+<!-- Feature Card 2 -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] shadow-[0px_20px_40px_rgba(19,27,46,0.04)] hover:shadow-[0px_30px_60px_rgba(19,27,46,0.08)] transition-all duration-300 transform md:-translate-y-4">
+<div class="w-14 h-14 bg-tertiary-container/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-tertiary text-3xl">restaurant_menu</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Personalized Meal Plans</h3>
+<p class="text-on-surface-variant leading-relaxed">Dynamic recipes that adapt to your macro requirements in real-time, ensuring you never have to settle for boring food.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="group bg-surface-container-lowest p-10 rounded-[2rem] shadow-[0px_20px_40px_rgba(19,27,46,0.04)] hover:shadow-[0px_30px_60px_rgba(19,27,46,0.08)] transition-all duration-300">
+<div class="w-14 h-14 bg-secondary-container/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-secondary text-3xl">monitoring</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Progress Tracking</h3>
+<p class="text-on-surface-variant leading-relaxed">Visualize your evolution with beautiful data visualizations that highlight trends in body composition and energy levels.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats/Social Proof Section -->
+<section class="py-20 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+<div>
+<h2 class="text-4xl font-black text-on-surface mb-2 tracking-tight">150,000+</h2>
+<p class="text-label text-slate-500 font-bold uppercase tracking-widest text-xs">Active Users</p>
+</div>
+<div>
+<h2 class="text-4xl font-black text-on-surface mb-2 tracking-tight">2.4M</h2>
+<p class="text-label text-slate-500 font-bold uppercase tracking-widest text-xs">Meals Tracked</p>
+</div>
+<div>
+<h2 class="text-4xl font-black text-on-surface mb-2 tracking-tight">98%</h2>
+<p class="text-label text-slate-500 font-bold uppercase tracking-widest text-xs">Success Rate</p>
+</div>
+<div>
+<h2 class="text-4xl font-black text-on-surface mb-2 tracking-tight">4.9/5</h2>
+<p class="text-label text-slate-500 font-bold uppercase tracking-widest text-xs">User Rating</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 lg:p-20 relative overflow-hidden flex flex-col lg:flex-row items-center gap-12">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 20% 50%, white 0%, transparent 50%);"></div>
+<div class="flex-1 relative z-10 text-center lg:text-left">
+<h2 class="text-4xl lg:text-6xl font-black text-on-primary-container leading-tight mb-8">Ready to unlock your full potential?</h2>
+<button class="bg-surface-container-lowest text-primary px-10 py-5 rounded-full font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-2xl">
+                        Join MacroMitra Now
+                    </button>
+</div>
+<div class="flex-1 lg:pl-12">
+<p class="text-on-primary-container text-xl leading-relaxed font-medium opacity-90">
+                        "MacroMitra changed the way I view food. It’s no longer about restriction; it’s about fueling my body with the exact precision it deserves."
+                    </p>
+<div class="mt-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
+<img alt="User Testimonial" class="w-full h-full object-cover" data-alt="Portrait of a healthy athletic young woman with a warm confident smile and glowing skin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDANIv0x2prEPvrY2ZPkNqqb7SQaVQQp5LG0dQjcE081ZE_G3klMMQn5GimwYRnZLJOk-bnx_2vfOX7A55QQrSgVQnfVjUD1DoTPWiDc8KvG8wv0fpg3V_i33S8C55pUiK68JlgV8C0FmEokh54VpYniTUawBKfA0CsiHO2-dG7p3DXZnrQc1awV07irYtW5YvHR5GCDHfZc353Z4cCHVqJZlsS6uUKxbmcjOWyJvXHB0PNACAPGSj6Dqdgsfb-hs6RIObjv8h1N7s"/>
+</div>
+<span class="text-on-primary-container font-bold">— Sarah J., Elite Athlete</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/15 bg-slate-50">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<span class="text-lg font-bold text-slate-900">MacroMitra</span>
+<p class="text-slate-500 text-sm font-medium">© 2024 MacroMitra. Precision Nutrition.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 font-medium text-sm hover:text-green-600 transition-colors" href="#">About</a>
+<a class="text-slate-500 font-medium text-sm hover:text-green-600 transition-colors" href="#">Privacy</a>
+<a class="text-slate-500 font-medium text-sm hover:text-green-600 transition-colors" href="#">Terms</a>
+<a class="text-slate-500 font-medium text-sm hover:text-green-600 transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>
