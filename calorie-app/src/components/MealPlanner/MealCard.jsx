@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MealCard = ({ item, mealType, time }) => {
+const MealCard = ({ item, time }) => {
   const getPlaceholderImage = (name) => {
     const term = name.split(' ')[0].toLowerCase();
     return `https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop&q=80&sig=${term}`;
@@ -24,15 +24,20 @@ const MealCard = ({ item, mealType, time }) => {
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
               <span className={`label-tier ${isMain ? 'text-primary' : 'text-on-surface/40'}`}>
-                {roleLabel}
+                {roleLabel} {time ? `• ${time}` : ''}
               </span>
               {item.isHighProtein && (
                 <span className="bg-primary/10 text-primary text-[8px] font-black uppercase px-2 py-0.5 rounded-full">High Protein</span>
               )}
             </div>
             <h4 className={`text-lg font-black tracking-tight ${isMain ? 'text-on-surface' : 'text-on-surface/80'}`}>
-              {item.name}
+              {item.displayName || item.name}
             </h4>
+            {(item.displayPortion || item.portion) && (
+              <p className="text-xs font-semibold text-on-surface/60">
+                {item.displayPortion || item.portion}
+              </p>
+            )}
           </div>
           <div className="text-right">
             <span className="text-xl font-black text-on-surface">{Math.round(item.calories)}</span>

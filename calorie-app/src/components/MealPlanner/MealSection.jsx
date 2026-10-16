@@ -23,7 +23,6 @@ const MealSection = ({ mealData }) => {
           <MealCard 
             key={`${mealData.meal}-${idx}`} 
             item={item} 
-            mealType={mealData.meal}
             time={mealTimes[mealData.meal]}
           />
         ))}

@@ -9,12 +9,14 @@ const JUNK_BLACKLIST = [
 
 const SIDE_KEYWORDS = [
   'curd', 'yogurt', 'salad', 'fruit', 'nuts', 'buttermilk', 
-  'vegetables', 'cucumber', 'carrot', 'sprouts', 'peanut', 'almond'
+  'vegetables', 'cucumber', 'carrot', 'sprouts', 'peanut', 'almond',
+  'raita', 'chutney', 'papad'
 ];
 
 const PROTEIN_RICH_KEYWORDS = [
   'chicken', 'egg', 'paneer', 'tofu', 'dal', 'rajma', 'chole', 
-  'soya', 'milk', 'fish', 'meat', 'mutton', 'whey', 'greek yogurt'
+  'soya', 'milk', 'fish', 'meat', 'mutton', 'whey', 'greek yogurt',
+  'prawn', 'salmon', 'tuna', 'keema'
 ];
 
 export const useFoodData = () => {
@@ -23,16 +25,33 @@ export const useFoodData = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchData = async () => {
       try {
+        // 1. Try loading the pre-merged comprehensive JSON catalogue
+        const jsonRes = await fetch('/data/merged_food_catalogue.json');
+        if (jsonRes.ok) {
+          const catalogue = await jsonRes.json();
+          if (catalogue && Array.isArray(catalogue.foods) && catalogue.foods.length > 0) {
+            if (isMounted) {
+              setFoodData(catalogue.foods);
+              setIsLoading(false);
+            }
+            return;
+          }
+        }
+
+        // 2. Fallback to existing CSVs if JSON is not available
+        console.warn('Merged catalogue JSON not found, falling back to CSV files.');
         const [res1, res2] = await Promise.all([
           fetch('/data/indian_food_nutrition.csv'),
           fetch('/data/indian_food_health.csv')
         ]);
 
         const texts = await Promise.all([res1.text(), res2.text()]);
-        
-        const parseCSV = (csvText) => {
+
+        const parseCSV = (csvText, sourceName) => {
           return new Promise((resolve) => {
             Papa.parse(csvText, {
               header: true,
@@ -49,44 +68,48 @@ export const useFoodData = () => {
                       else if (lowerKey.includes('protein')) finalKey = 'protein';
                       else if (lowerKey.includes('carbs')) finalKey = 'carbs';
                       else if (lowerKey.includes('fat')) finalKey = 'fat';
+                      else if (lowerKey.includes('fiber')) finalKey = 'fiber';
+                      else if (lowerKey.includes('sugar')) finalKey = 'sugar';
                       
                       normalizedRow[finalKey] = row[key];
                     });
                     return normalizedRow;
                   })
-                  .map(row => {
+                  .map((row, idx) => {
                     const name = row.name || 'Unknown Item';
                     const nameLower = name.toLowerCase();
                     
-                    // Categorization Logic
                     const isBlacklisted = JUNK_BLACKLIST.some(j => nameLower.includes(j));
-                    
-                    // Strict Curry Rules: Only Chicken, Fish, Egg
                     const isCurry = nameLower.includes('curry') || nameLower.includes('masala') || nameLower.includes('chettinad');
                     const isAllowedCurry = nameLower.includes('chicken') || nameLower.includes('fish') || nameLower.includes('egg') || nameLower.includes('meen') || nameLower.includes('kozhi');
-                    
-                    // If it's a curry but not an allowed one, we don't treat it as a main dish candidate
-                    // for the planner, but we keep it in the database.
                     const isForbiddenCurry = isCurry && !isAllowedCurry;
 
                     const isSide = SIDE_KEYWORDS.some(s => nameLower.includes(s));
-                    const isHighProtein = PROTEIN_RICH_KEYWORDS.some(p => nameLower.includes(p));
+                    const proteinVal = parseFloat(row.protein) || 0;
+                    const isHighProtein = proteinVal >= 10 || PROTEIN_RICH_KEYWORDS.some(p => nameLower.includes(p));
                     
                     return {
+                      id: `${sourceName}-${idx}-${name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
                       name,
+                      aliases: [name],
+                      category: isSide ? 'Side Dish' : 'Main Dish',
+                      serving_basis: sourceName === 'core' ? 'serving' : '100g',
+                      serving_unit: sourceName === 'core' ? '1 serving' : '100g',
                       calories: parseFloat(row.calories),
-                      protein: parseFloat(row.protein),
-                      carbs: parseFloat(row.carbs),
-                      fat: parseFloat(row.fat),
+                      protein: proteinVal,
+                      carbs: parseFloat(row.carbs) || 0,
+                      fat: parseFloat(row.fat) || 0,
+                      fiber: row.fiber ? parseFloat(row.fiber) : null,
+                      sugar: row.sugar ? parseFloat(row.sugar) : null,
                       isSide,
                       isMain: !isSide && !isBlacklisted && !isForbiddenCurry,
                       isHighProtein,
                       isBlacklisted,
-                      isAllowedCurry
+                      isAllowedCurry,
+                      source: sourceName === 'core' ? 'macro_mitra_core' : 'existing_health_100g'
                     };
                   })
                   .filter(row => 
-                    !row.isBlacklisted &&
                     !isNaN(row.calories) && 
                     !isNaN(row.protein) && 
                     !isNaN(row.carbs) && 
@@ -98,26 +121,36 @@ export const useFoodData = () => {
           });
         };
 
-        const [data1, data2] = await Promise.all([parseCSV(texts[0]), parseCSV(texts[1])]);
-        
-        // Merge and remove duplicates by name
-        const combined = [...data1, ...data2];
+        const [data1, data2] = await Promise.all([
+          parseCSV(texts[0], 'core'),
+          parseCSV(texts[1], 'health')
+        ]);
+
         const uniqueMap = new Map();
-        combined.forEach(item => {
-          if (!uniqueMap.has(item.name.toLowerCase())) {
-            uniqueMap.set(item.name.toLowerCase(), item);
+        [...data1, ...data2].forEach(item => {
+          const key = item.name.toLowerCase().trim();
+          if (!uniqueMap.has(key)) {
+            uniqueMap.set(key, item);
           }
         });
 
-        setFoodData(Array.from(uniqueMap.values()));
-        setIsLoading(false);
+        if (isMounted) {
+          setFoodData(Array.from(uniqueMap.values()));
+          setIsLoading(false);
+        }
       } catch (err) {
-        setError(err.message);
-        setIsLoading(false);
+        if (isMounted) {
+          setError(err.message);
+          setIsLoading(false);
+        }
       }
     };
 
     fetchData();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return { foodData, isLoading, error };

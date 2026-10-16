@@ -36,6 +36,16 @@ describe('calculateBMR', () => {
     expect(result.tdee).toBe(1547);
   });
 
+  it('correctly applies lightly active (1.375) and very active (1.725) multipliers', () => {
+    const maleLight = { weight: 70, height: 170, age: 25, sex: 'male', activityLevel: 'light' };
+    const resLight = calculateBMR(maleLight);
+    expect(resLight.tdee).toBe(Math.round(1642.5 * 1.375)); // 2258
+
+    const maleVeryActive = { weight: 70, height: 170, age: 25, sex: 'male', activityLevel: 'veryActive' };
+    const resVeryActive = calculateBMR(maleVeryActive);
+    expect(resVeryActive.tdee).toBe(Math.round(1642.5 * 1.725)); // 2833
+  });
+
   it('handles invalid activity level by defaulting to sedentary', () => {
     const profile = {
       weight: 70,
@@ -48,5 +58,11 @@ describe('calculateBMR', () => {
     const result = calculateBMR(profile);
     // 1642.5 (bmr) * 1.2 = 1971
     expect(result.tdee).toBe(1971);
+  });
+
+  it('rejects invalid or negative biometric inputs', () => {
+    expect(() => calculateBMR({ weight: -70, height: 170, age: 25, sex: 'male' })).toThrow();
+    expect(() => calculateBMR({ weight: 70, height: 0, age: 25, sex: 'male' })).toThrow();
+    expect(() => calculateBMR({ weight: 70, height: 170, age: -5, sex: 'male' })).toThrow();
   });
 });

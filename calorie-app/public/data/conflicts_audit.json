@@ -1,0 +1,915 @@
+{
+  "generated_at": "2026-10-15",
+  "source_priority_rules": [
+    "1. macro_mitra_core: Serving-based calibrated portions take highest precedence for meal planning.",
+    "2. ifct_2017_reference: ICMR-NIN gold-standard laboratory reference for raw Indian agricultural foods and commodities.",
+    "3. existing_health_100g: Hand-curated 100g records take precedence over uncurated web/kaggle datasets.",
+    "4. kaggle_indb_100g: Anuvaad INDB records enrich the catalogue with composite cooked Indian recipes.",
+    "5. kaggle_everyday_150: Everyday staple foods enrich the catalogue without overwriting prior sources."
+  ],
+  "conflicts_count": 58,
+  "conflicts": [
+    {
+      "item_name": "Calf, round (leg)",
+      "matched_candidate_names": [
+        "calf round",
+        "calf round leg",
+        "leg"
+      ],
+      "retained_name": "Beef, round (leg)",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 157.3,
+      "retained_protein": 22.64,
+      "skipped_source": "ifct_2017_reference",
+      "skipped_calories": 147.0,
+      "skipped_protein": 21.1,
+      "reason": "Duplicate raw commodity match with core serving record; higher-priority core portion retained."
+    },
+    {
+      "item_name": "Mithun, round (leg)",
+      "matched_candidate_names": [
+        "leg",
+        "mithun round",
+        "mithun round leg"
+      ],
+      "retained_name": "Beef, round (leg)",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 157.3,
+      "retained_protein": 22.64,
+      "skipped_source": "ifct_2017_reference",
+      "skipped_calories": 115.9,
+      "skipped_protein": 19.61,
+      "reason": "Duplicate raw commodity match with core serving record; higher-priority core portion retained."
+    },
+    {
+      "item_name": "Pork, tube (small intestine)",
+      "matched_candidate_names": [
+        "pork tube",
+        "pork tube small intestine",
+        "small intestine"
+      ],
+      "retained_name": "Goat, tube (small intestine)",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 125.5,
+      "retained_protein": 12.92,
+      "skipped_source": "ifct_2017_reference",
+      "skipped_calories": 140.3,
+      "skipped_protein": 14.96,
+      "reason": "Duplicate raw commodity match with core serving record; higher-priority core portion retained."
+    },
+    {
+      "item_name": "Cat fish",
+      "matched_candidate_names": [
+        "cat fish"
+      ],
+      "retained_name": "Cat fish",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 109.0,
+      "retained_protein": 22.18,
+      "skipped_source": "ifct_2017_reference",
+      "skipped_calories": 123.8,
+      "skipped_protein": 15.86,
+      "reason": "Duplicate raw commodity match with core serving record; higher-priority core portion retained."
+    },
+    {
+      "item_name": "Crab",
+      "matched_candidate_names": [
+        "crab"
+      ],
+      "retained_name": "Crab",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 82.0,
+      "retained_protein": 10.23,
+      "skipped_source": "ifct_2017_reference",
+      "skipped_calories": 78.2,
+      "skipped_protein": 13.23,
+      "reason": "Duplicate raw commodity match with core serving record; higher-priority core portion retained."
+    },
+    {
+      "item_name": "Safflower oil (blended)",
+      "matched_candidate_names": [
+        "blended",
+        "safflower oil",
+        "safflower oil blended"
+      ],
+      "retained_name": "Safflower oil",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 0.0,
+      "retained_protein": 0.0,
+      "skipped_source": "ifct_2017_reference",
+      "skipped_calories": 0.0,
+      "skipped_protein": 0.0,
+      "reason": "Duplicate raw commodity match with core serving record; higher-priority core portion retained."
+    },
+    {
+      "item_name": "Fruit Punch (with squashes)",
+      "matched_candidate_names": [
+        "fruit punch",
+        "fruit punch with squashes",
+        "with squashes"
+      ],
+      "retained_name": "Fruit Punch (with fresh juices)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 36.12,
+      "retained_protein": 0.14,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 23.13,
+      "skipped_protein": 0.07,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Cheese and tomato sandwich (toasted) (Cheese aur tamatar ke sandwich (toasted))",
+      "matched_candidate_names": [
+        "cheese and tomato sandwich",
+        "cheese and tomato sandwich toasted cheese aur tamatar ke sandwich toasted",
+        "cheese aur tamatar ke sandwich toasted",
+        "toasted"
+      ],
+      "retained_name": "Cheese and tomato sandwich (Cheese aur tamatar ke sandwich)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 243.32,
+      "retained_protein": 7.92,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 224.58,
+      "skipped_protein": 6.82,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Pea potato sandwich (toasted) (Matar aloo ka sandwich)",
+      "matched_candidate_names": [
+        "matar aloo ka sandwich",
+        "pea potato sandwich",
+        "pea potato sandwich toasted matar aloo ka sandwich",
+        "toasted"
+      ],
+      "retained_name": "Mushroom and cheese sandwich (toasted)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 227.42,
+      "retained_protein": 7.79,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 164.9,
+      "skipped_protein": 4.6,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Paneer pea sandwich (toasted) (Paneer matar ka sandwich)",
+      "matched_candidate_names": [
+        "paneer matar ka sandwich",
+        "paneer pea sandwich",
+        "paneer pea sandwich toasted paneer matar ka sandwich",
+        "toasted"
+      ],
+      "retained_name": "Mushroom and cheese sandwich (toasted)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 227.42,
+      "retained_protein": 7.79,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 249.56,
+      "skipped_protein": 12.4,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Chicken sandwich (toasted)",
+      "matched_candidate_names": [
+        "chicken sandwich",
+        "chicken sandwich toasted",
+        "toasted"
+      ],
+      "retained_name": "Chicken sandwich",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 253.27,
+      "retained_protein": 13.12,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 167.37,
+      "skipped_protein": 12.08,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Pea keema sandwich (toasted) (Matar aur keema ka sandwich)",
+      "matched_candidate_names": [
+        "matar aur keema ka sandwich",
+        "pea keema sandwich",
+        "pea keema sandwich toasted matar aur keema ka sandwich",
+        "toasted"
+      ],
+      "retained_name": "Mushroom and cheese sandwich (toasted)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 227.42,
+      "retained_protein": 7.79,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 171.78,
+      "skipped_protein": 11.06,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Rice flakes (Chiwda/Aval)",
+      "matched_candidate_names": [
+        "aval",
+        "chiwda",
+        "chiwda aval",
+        "rice flakes",
+        "rice flakes aval",
+        "rice flakes chiwda",
+        "rice flakes chiwda aval"
+      ],
+      "retained_name": "Rice, flakes",
+      "retained_source": "ifct_2017_reference",
+      "retained_calories": 353.7,
+      "retained_protein": 7.44,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 112.44,
+      "skipped_protein": 3.62,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Chapati/Roti",
+      "matched_candidate_names": [
+        "chapati",
+        "chapati roti",
+        "roti"
+      ],
+      "retained_name": "Roti (Whole Wheat)",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 85.0,
+      "retained_protein": 3.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 202.31,
+      "skipped_protein": 5.88,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Plain parantha/paratha",
+      "matched_candidate_names": [
+        "parantha",
+        "parantha paratha",
+        "paratha",
+        "plain parantha",
+        "plain parantha paratha",
+        "plain paratha"
+      ],
+      "retained_name": "Paratha",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 320.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 298.3,
+      "skipped_protein": 5.06,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Mutton biryani/biriyani",
+      "matched_candidate_names": [
+        "mutton biriyani",
+        "mutton biryani",
+        "mutton biryani biriyani"
+      ],
+      "retained_name": "Mutton Biryani",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 450.0,
+      "retained_protein": 25.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 190.76,
+      "skipped_protein": 7.38,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Vegetable biryani/biriyani",
+      "matched_candidate_names": [
+        "vegetable biriyani",
+        "vegetable biryani",
+        "vegetable biryani biriyani"
+      ],
+      "retained_name": "Vegetable Biryani",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 320.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 174.61,
+      "skipped_protein": 3.16,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Naan",
+      "matched_candidate_names": [
+        "naan"
+      ],
+      "retained_name": "Naan",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 260.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 286.45,
+      "skipped_protein": 8.05,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Bhatura",
+      "matched_candidate_names": [
+        "bhatura"
+      ],
+      "retained_name": "Bhatura",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 380.0,
+      "retained_protein": 10.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 793.2,
+      "skipped_protein": 1.63,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Idli",
+      "matched_candidate_names": [
+        "idli"
+      ],
+      "retained_name": "Idli (2 pcs)",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 110.0,
+      "retained_protein": 4.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 137.54,
+      "skipped_protein": 4.64,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Masala dosa",
+      "matched_candidate_names": [
+        "masala dosa"
+      ],
+      "retained_name": "Masala Dosa",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 330.0,
+      "retained_protein": 6.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 164.58,
+      "skipped_protein": 3.29,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Pea paneer curry (Matar paneer)",
+      "matched_candidate_names": [
+        "matar paneer",
+        "pea paneer curry",
+        "pea paneer curry matar paneer"
+      ],
+      "retained_name": "Matar Paneer",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 240.0,
+      "retained_protein": 15.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 134.83,
+      "skipped_protein": 6.61,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Spinach paneer (Palak paneer)",
+      "matched_candidate_names": [
+        "palak paneer",
+        "spinach paneer",
+        "spinach paneer palak paneer"
+      ],
+      "retained_name": "Palak Paneer",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 210.0,
+      "retained_protein": 14.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 77.68,
+      "skipped_protein": 4.03,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Avial",
+      "matched_candidate_names": [
+        "avial"
+      ],
+      "retained_name": "Avial",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 140.0,
+      "retained_protein": 4.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 124.56,
+      "skipped_protein": 2.46,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Shahi paneer",
+      "matched_candidate_names": [
+        "shahi paneer"
+      ],
+      "retained_name": "Shahi Paneer",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 280.0,
+      "retained_protein": 14.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 156.5,
+      "skipped_protein": 5.06,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Shepherd's pie (with minced meat)",
+      "matched_candidate_names": [
+        "shepherd s pie",
+        "shepherd s pie with minced meat",
+        "with minced meat"
+      ],
+      "retained_name": "Shepherd's pie (vegetarian)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 135.63,
+      "retained_protein": 5.04,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 142.78,
+      "skipped_protein": 7.45,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Chicken curry",
+      "matched_candidate_names": [
+        "chicken curry"
+      ],
+      "retained_name": "Chicken Curry (Home style)",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 220.0,
+      "retained_protein": 25.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 129.22,
+      "skipped_protein": 11.79,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Tandoori chicken",
+      "matched_candidate_names": [
+        "tandoori chicken"
+      ],
+      "retained_name": "Tandoori Chicken",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 240.0,
+      "retained_protein": 30.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 145.2,
+      "skipped_protein": 16.26,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Butter chicken",
+      "matched_candidate_names": [
+        "butter chicken"
+      ],
+      "retained_name": "Butter Chicken",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 380.0,
+      "retained_protein": 22.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 137.0,
+      "skipped_protein": 10.92,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Fish curry (Machli curry)",
+      "matched_candidate_names": [
+        "fish curry",
+        "fish curry machli curry",
+        "machli curry"
+      ],
+      "retained_name": "Fish Curry",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 180.0,
+      "retained_protein": 22.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 111.13,
+      "skipped_protein": 8.76,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Fruit salad (Phalon ka salaad)",
+      "matched_candidate_names": [
+        "fruit salad",
+        "fruit salad phalon ka salaad",
+        "phalon ka salaad"
+      ],
+      "retained_name": "Fruit Salad",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 80.0,
+      "retained_protein": 1.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 78.14,
+      "skipped_protein": 0.91,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Paneer shaslik/tikka",
+      "matched_candidate_names": [
+        "paneer shaslik",
+        "paneer shaslik tikka",
+        "paneer tikka"
+      ],
+      "retained_name": "Paneer Tikka",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 265.0,
+      "retained_protein": 18.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 93.85,
+      "skipped_protein": 5.11,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Spring roll",
+      "matched_candidate_names": [
+        "spring roll"
+      ],
+      "retained_name": "Spring Roll",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 200.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 623.87,
+      "skipped_protein": 1.81,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Dhokla",
+      "matched_candidate_names": [
+        "dhokla"
+      ],
+      "retained_name": "Dhokla",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 140.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 216.49,
+      "skipped_protein": 13.45,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Poha",
+      "matched_candidate_names": [
+        "poha"
+      ],
+      "retained_name": "Poha",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 180.0,
+      "retained_protein": 3.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 294.53,
+      "skipped_protein": 6.09,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Plain dosa",
+      "matched_candidate_names": [
+        "dosa",
+        "plain dosa"
+      ],
+      "retained_name": "Dosa",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 180.0,
+      "retained_protein": 4.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 380.91,
+      "skipped_protein": 10.34,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Appam",
+      "matched_candidate_names": [
+        "appam"
+      ],
+      "retained_name": "Appam",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 180.0,
+      "retained_protein": 4.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 267.7,
+      "skipped_protein": 3.12,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Chicken korma",
+      "matched_candidate_names": [
+        "chicken korma"
+      ],
+      "retained_name": "Chicken Korma",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 290.0,
+      "retained_protein": 28.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 147.96,
+      "skipped_protein": 9.83,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Egg curry (Anda curry)",
+      "matched_candidate_names": [
+        "anda curry",
+        "egg curry",
+        "egg curry anda curry"
+      ],
+      "retained_name": "Egg Curry",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 170.0,
+      "retained_protein": 14.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 117.52,
+      "skipped_protein": 5.38,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Cabbage rolls (curry) ((Pattagobhi rolls)(curry))",
+      "matched_candidate_names": [
+        "cabbage rolls",
+        "cabbage rolls curry pattagobhi rolls curry",
+        "curry",
+        "pattagobhi rolls"
+      ],
+      "retained_name": "Cabbage rolls (dry) ((Pattagobhi rolls) (dry))",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 142.48,
+      "retained_protein": 8.21,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 124.63,
+      "skipped_protein": 5.76,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Jackfruit/Kathal (dry)",
+      "matched_candidate_names": [
+        "dry",
+        "jackfruit",
+        "jackfruit dry",
+        "jackfruit kathal",
+        "jackfruit kathal dry",
+        "kathal",
+        "kathal dry"
+      ],
+      "retained_name": "Cabbage rolls (dry) ((Pattagobhi rolls) (dry))",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 142.48,
+      "retained_protein": 8.21,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 488.97,
+      "skipped_protein": 0.93,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Dhansak (vegetarian)",
+      "matched_candidate_names": [
+        "dhansak",
+        "dhansak vegetarian",
+        "vegetarian"
+      ],
+      "retained_name": "Shepherd's pie (vegetarian)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 135.63,
+      "retained_protein": 5.04,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 82.8,
+      "skipped_protein": 3.32,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Caramel custard (baked)",
+      "matched_candidate_names": [
+        "baked",
+        "caramel custard",
+        "caramel custard baked"
+      ],
+      "retained_name": "Caramel custard (steamed)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 121.58,
+      "retained_protein": 4.97,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 122.7,
+      "skipped_protein": 5.11,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Rasgulla",
+      "matched_candidate_names": [
+        "rasgulla"
+      ],
+      "retained_name": "Rasgulla",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 180.0,
+      "retained_protein": 4.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 118.64,
+      "skipped_protein": 1.38,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Masala onion pakora/pakoda (Pyaaz ke pakode)",
+      "matched_candidate_names": [
+        "masala onion pakoda",
+        "masala onion pakoda pyaaz ke pakode",
+        "masala onion pakora",
+        "masala onion pakora pakoda",
+        "masala onion pakora pakoda pyaaz ke pakode",
+        "masala onion pakora pyaaz ke pakode",
+        "pyaaz ke pakode"
+      ],
+      "retained_name": "Onion pakora/pakoda (Pyaaz ke pakode)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 674.61,
+      "retained_protein": 1.9,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 551.64,
+      "skipped_protein": 2.05,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Khaman (dhokla)",
+      "matched_candidate_names": [
+        "dhokla",
+        "khaman",
+        "khaman dhokla"
+      ],
+      "retained_name": "Dhokla",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 140.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 54.73,
+      "skipped_protein": 1.92,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "French sandwich (toasted)",
+      "matched_candidate_names": [
+        "french sandwich",
+        "french sandwich toasted",
+        "toasted"
+      ],
+      "retained_name": "Mushroom and cheese sandwich (toasted)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 227.42,
+      "retained_protein": 7.79,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 186.75,
+      "skipped_protein": 6.82,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Stuffed bittergourd (dry) (Bharwa karela)",
+      "matched_candidate_names": [
+        "bharwa karela",
+        "dry",
+        "stuffed bittergourd",
+        "stuffed bittergourd dry bharwa karela"
+      ],
+      "retained_name": "Cabbage rolls (dry) ((Pattagobhi rolls) (dry))",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 142.48,
+      "retained_protein": 8.21,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 217.65,
+      "skipped_protein": 1.29,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Sattu drink",
+      "matched_candidate_names": [
+        "sattu drink"
+      ],
+      "retained_name": "Sattu Drink",
+      "retained_source": "macro_mitra_core",
+      "retained_calories": 150.0,
+      "retained_protein": 9.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 23.38,
+      "skipped_protein": 0.56,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Sweetened yogurt (Shrikhand)",
+      "matched_candidate_names": [
+        "shrikhand",
+        "sweetened yogurt",
+        "sweetened yogurt shrikhand"
+      ],
+      "retained_name": "Shrikhand",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 240.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 107.18,
+      "skipped_protein": 5.27,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Chicken manchurian",
+      "matched_candidate_names": [
+        "chicken manchurian"
+      ],
+      "retained_name": "Chicken Manchurian",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 280.0,
+      "retained_protein": 25.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 142.34,
+      "skipped_protein": 9.53,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Khakhra",
+      "matched_candidate_names": [
+        "khakhra"
+      ],
+      "retained_name": "Khakhra",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 320.0,
+      "retained_protein": 14.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 178.5,
+      "skipped_protein": 4.78,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Pav bhaji",
+      "matched_candidate_names": [
+        "pav bhaji"
+      ],
+      "retained_name": "Pav Bhaji",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 240.0,
+      "retained_protein": 8.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 96.53,
+      "skipped_protein": 2.66,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Bhel puri",
+      "matched_candidate_names": [
+        "bhel puri"
+      ],
+      "retained_name": "Bhel Puri",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 160.0,
+      "retained_protein": 4.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 509.89,
+      "skipped_protein": 3.52,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "White sauce (medium)",
+      "matched_candidate_names": [
+        "medium",
+        "white sauce",
+        "white sauce medium"
+      ],
+      "retained_name": "White sauce (thin)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 115.17,
+      "retained_protein": 3.31,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 151.27,
+      "skipped_protein": 3.36,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "White sauce (thick)",
+      "matched_candidate_names": [
+        "thick",
+        "white sauce",
+        "white sauce thick"
+      ],
+      "retained_name": "White sauce (thin)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 115.17,
+      "retained_protein": 3.31,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 209.69,
+      "skipped_protein": 3.43,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Mango pickle (Aam ka achaar)",
+      "matched_candidate_names": [
+        "aam ka achaar",
+        "mango pickle",
+        "mango pickle aam ka achaar"
+      ],
+      "retained_name": "Mango Pickle",
+      "retained_source": "existing_health_100g",
+      "retained_calories": 120.0,
+      "retained_protein": 1.0,
+      "skipped_source": "kaggle_indb_100g",
+      "skipped_calories": 192.12,
+      "skipped_protein": 1.6,
+      "reason": "Duplicate / synonym match with trusted existing catalogue item; higher-priority trusted values preserved."
+    },
+    {
+      "item_name": "Banana chips",
+      "matched_candidate_names": [
+        "banana chips"
+      ],
+      "retained_name": "Banana chips (Kele ke chips)",
+      "retained_source": "kaggle_indb_100g",
+      "retained_calories": 665.67,
+      "retained_protein": 0.37,
+      "skipped_source": "kaggle_everyday_150",
+      "skipped_calories": 519.0,
+      "skipped_protein": 2.3,
+      "reason": "Duplicate match with existing catalogue item; higher priority source preserved."
+    }
+  ]
+}

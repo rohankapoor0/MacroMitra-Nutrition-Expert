@@ -1,0 +1,744 @@
+{
+  "generated_at": "2026-10-15",
+  "methodology": "4/4/9 Energy consistency diagnostic check (Protein*4 + Carbs*4 + Fat*9 vs Reported Calories)",
+  "specific_dishes_audited": {
+    "spinach_paneer_palak_paneer": {
+      "dish_name": "Spinach paneer (Palak paneer)",
+      "dataset_source": "batthulavinay/indian-food-nutrition (Anuvaad INDB Row 198)",
+      "reported_in_indb": "77.68 kcal, 4.02g protein, 4.41g carbs, 4.84g fat per 100g",
+      "status": "Resolved / Deduplicated",
+      "action_taken": "Identified as exact duplicate of trusted MacroMitra Core Palak Paneer (210 kcal per 200g serving = 105 kcal/100g, 7g P) and Curated Health 100g (220 kcal, 14g P). Retained trusted canonical record via documented source priority rule (Core/Health > INDB); added 'Spinach paneer' to aliases."
+    },
+    "paneer_shashlik_tikka": {
+      "dish_name": "Paneer shaslik/tikka",
+      "dataset_source": "batthulavinay/indian-food-nutrition (Anuvaad INDB Row 355)",
+      "reported_in_indb": "93.85 kcal, 5.09g protein, 8.01g carbs, 4.57g fat per 100g",
+      "status": "Resolved / Deduplicated",
+      "action_taken": "Identified as duplicate of trusted MacroMitra Core Paneer Tikka (265 kcal per 150g serving = 176.67 kcal/100g, 12g P) and Curated Health 100g (260 kcal, 18g P). Retained trusted canonical record via documented source priority rule; added 'Paneer shaslik' to aliases."
+    },
+    "paneer_soup": {
+      "dish_name": "Paneer soup",
+      "dataset_source": "batthulavinay/indian-food-nutrition (Anuvaad INDB Row 913)",
+      "reported_in_indb": "47.85 kcal, 3.22g protein, 2.42g carbs, 2.81g fat per 100g",
+      "status": "Verified Genuine Broth/Soup",
+      "action_taken": "Energy diagnostic check: (3.22 * 4) + (2.42 * 4) + (2.81 * 9) = 12.88 + 9.68 + 25.29 = 47.85 kcal. Exact 100% agreement with 4/4/9 macro energy calculation. Verified as authentic liquid paneer broth/soup (not a curry). Preserved with verified 100g basis."
+    }
+  },
+  "kj_conversions_count": 38,
+  "kj_to_kcal_conversions": [
+    {
+      "food_id": "everyday-8-croissants-apple",
+      "name": "Croissants, apple",
+      "original_kj": 1060.0,
+      "converted_kcal": 253.35,
+      "conversion_note": "Converted from kJ to kcal: original 1060.0 kJ / 4.184 = 253.35 kcal (ratio was 4.14)"
+    },
+    {
+      "food_id": "everyday-16-rose-apples-raw",
+      "name": "Rose-apples, raw",
+      "original_kj": 105.0,
+      "converted_kcal": 25.1,
+      "conversion_note": "Converted from kJ to kcal: original 105.0 kJ / 4.184 = 25.1 kcal (ratio was 3.76)"
+    },
+    {
+      "food_id": "everyday-24-bananas-raw",
+      "name": "Bananas, raw",
+      "original_kj": 371.0,
+      "converted_kcal": 88.67,
+      "conversion_note": "Converted from kJ to kcal: original 371.0 kJ / 4.184 = 88.67 kcal (ratio was 3.77)"
+    },
+    {
+      "food_id": "everyday-27-melon-banana-navajo",
+      "name": "Melon, banana (Navajo)",
+      "original_kj": 90.0,
+      "converted_kcal": 21.51,
+      "conversion_note": "Converted from kJ to kcal: original 90.0 kJ / 4.184 = 21.51 kcal (ratio was 4.21)"
+    },
+    {
+      "food_id": "everyday-38-beverages-carbonated-orange",
+      "name": "Beverages, carbonated, orange",
+      "original_kj": 201.0,
+      "converted_kcal": 48.04,
+      "conversion_note": "Converted from kJ to kcal: original 201.0 kJ / 4.184 = 48.04 kcal (ratio was 4.09)"
+    },
+    {
+      "food_id": "everyday-39-orange-peel-raw",
+      "name": "Orange peel, raw",
+      "original_kj": 405.0,
+      "converted_kcal": 96.8,
+      "conversion_note": "Converted from kJ to kcal: original 405.0 kJ / 4.184 = 96.8 kcal (ratio was 3.76)"
+    },
+    {
+      "food_id": "everyday-43-oranges-raw-with-peel",
+      "name": "Oranges, raw, with peel",
+      "original_kj": 262.0,
+      "converted_kcal": 62.62,
+      "conversion_note": "Converted from kJ to kcal: original 262.0 kJ / 4.184 = 62.62 kcal (ratio was 3.75)"
+    },
+    {
+      "food_id": "everyday-44-tomatoes-orange-raw",
+      "name": "Tomatoes, orange, raw",
+      "original_kj": 67.0,
+      "converted_kcal": 16.01,
+      "conversion_note": "Converted from kJ to kcal: original 67.0 kJ / 4.184 = 16.01 kcal (ratio was 3.51)"
+    },
+    {
+      "food_id": "everyday-48-grape-leaves-raw",
+      "name": "Grape leaves, raw",
+      "original_kj": 390.0,
+      "converted_kcal": 93.21,
+      "conversion_note": "Converted from kJ to kcal: original 390.0 kJ / 4.184 = 93.21 kcal (ratio was 3.52)"
+    },
+    {
+      "food_id": "everyday-49-grapes-muscadine-raw",
+      "name": "Grapes, muscadine, raw",
+      "original_kj": 238.0,
+      "converted_kcal": 56.88,
+      "conversion_note": "Converted from kJ to kcal: original 238.0 kJ / 4.184 = 56.88 kcal (ratio was 3.77)"
+    },
+    {
+      "food_id": "everyday-51-beverages-carbonated-grape-soda",
+      "name": "Beverages, carbonated, grape soda",
+      "original_kj": 180.0,
+      "converted_kcal": 43.02,
+      "conversion_note": "Converted from kJ to kcal: original 180.0 kJ / 4.184 = 43.02 kcal (ratio was 4.02)"
+    },
+    {
+      "food_id": "everyday-55-beverages-grape-juice-drink-canned",
+      "name": "Beverages, grape juice drink, canned",
+      "original_kj": 237.0,
+      "converted_kcal": 56.64,
+      "conversion_note": "Converted from kJ to kcal: original 237.0 kJ / 4.184 = 56.64 kcal (ratio was 4.06)"
+    },
+    {
+      "food_id": "everyday-56-beverages-ocean-spray-cran-grape",
+      "name": "Beverages, OCEAN SPRAY, Cran Grape",
+      "original_kj": 224.0,
+      "converted_kcal": 53.54,
+      "conversion_note": "Converted from kJ to kcal: original 224.0 kJ / 4.184 = 53.54 kcal (ratio was 4.18)"
+    },
+    {
+      "food_id": "everyday-67-mango-dried-sweetened",
+      "name": "Mango, dried, sweetened",
+      "original_kj": 1340.0,
+      "converted_kcal": 320.27,
+      "conversion_note": "Converted from kJ to kcal: original 1340.0 kJ / 4.184 = 320.27 kcal (ratio was 4.0)"
+    },
+    {
+      "food_id": "everyday-72-fruit-juice-smoothie-naked-juice-mighty-",
+      "name": "Fruit juice smoothie, NAKED JUICE, MIGHTY MANGO",
+      "original_kj": 262.0,
+      "converted_kcal": 62.62,
+      "conversion_note": "Converted from kJ to kcal: original 262.0 kJ / 4.184 = 62.62 kcal (ratio was 4.25)"
+    },
+    {
+      "food_id": "everyday-81-pears-asian-raw",
+      "name": "Pears, asian, raw",
+      "original_kj": 176.0,
+      "converted_kcal": 42.07,
+      "conversion_note": "Converted from kJ to kcal: original 176.0 kJ / 4.184 = 42.07 kcal (ratio was 3.79)"
+    },
+    {
+      "food_id": "everyday-82-pears-raw-bartlett",
+      "name": "Pears, raw, bartlett",
+      "original_kj": 238.0,
+      "converted_kcal": 56.88,
+      "conversion_note": "Converted from kJ to kcal: original 238.0 kJ / 4.184 = 56.88 kcal (ratio was 3.76)"
+    },
+    {
+      "food_id": "everyday-83-prickly-pears-raw",
+      "name": "Prickly pears, raw",
+      "original_kj": 172.0,
+      "converted_kcal": 41.11,
+      "conversion_note": "Converted from kJ to kcal: original 172.0 kJ / 4.184 = 41.11 kcal (ratio was 3.76)"
+    },
+    {
+      "food_id": "everyday-85-pears-dried-sulfured-uncooked",
+      "name": "Pears, dried, sulfured, uncooked",
+      "original_kj": 1100.0,
+      "converted_kcal": 262.91,
+      "conversion_note": "Converted from kJ to kcal: original 1100.0 kJ / 4.184 = 262.91 kcal (ratio was 3.77)"
+    },
+    {
+      "food_id": "everyday-91-toppings-strawberry",
+      "name": "Toppings, strawberry",
+      "original_kj": 1060.0,
+      "converted_kcal": 253.35,
+      "conversion_note": "Converted from kJ to kcal: original 1060.0 kJ / 4.184 = 253.35 kcal (ratio was 3.97)"
+    },
+    {
+      "food_id": "everyday-94-guavas-strawberry-raw",
+      "name": "Guavas, strawberry, raw",
+      "original_kj": 289.0,
+      "converted_kcal": 69.07,
+      "conversion_note": "Converted from kJ to kcal: original 289.0 kJ / 4.184 = 69.07 kcal (ratio was 3.74)"
+    },
+    {
+      "food_id": "everyday-95-ice-creams-strawberry",
+      "name": "Ice creams, strawberry",
+      "original_kj": 803.0,
+      "converted_kcal": 191.92,
+      "conversion_note": "Converted from kJ to kcal: original 803.0 kJ / 4.184 = 191.92 kcal (ratio was 4.04)"
+    },
+    {
+      "food_id": "everyday-101-fast-foods-sundae-strawberry",
+      "name": "Fast foods, sundae, strawberry",
+      "original_kj": 732.0,
+      "converted_kcal": 174.95,
+      "conversion_note": "Converted from kJ to kcal: original 732.0 kJ / 4.184 = 174.95 kcal (ratio was 4.08)"
+    },
+    {
+      "food_id": "everyday-104-strawberries-frozen-sweetened-sliced",
+      "name": "Strawberries, frozen, sweetened, sliced",
+      "original_kj": 402.0,
+      "converted_kcal": 96.08,
+      "conversion_note": "Converted from kJ to kcal: original 402.0 kJ / 4.184 = 96.08 kcal (ratio was 3.76)"
+    },
+    {
+      "food_id": "everyday-111-blueberries-dried-sweetened",
+      "name": "Blueberries, dried, sweetened",
+      "original_kj": 1330.0,
+      "converted_kcal": 317.88,
+      "conversion_note": "Converted from kJ to kcal: original 1330.0 kJ / 4.184 = 317.88 kcal (ratio was 3.77)"
+    },
+    {
+      "food_id": "everyday-112-blueberries-frozen-sweetened",
+      "name": "Blueberries, frozen, sweetened",
+      "original_kj": 355.0,
+      "converted_kcal": 84.85,
+      "conversion_note": "Converted from kJ to kcal: original 355.0 kJ / 4.184 = 84.85 kcal (ratio was 3.91)"
+    },
+    {
+      "food_id": "everyday-114-muffins-blueberry-toaster-type",
+      "name": "Muffins, blueberry, toaster-type",
+      "original_kj": 1310.0,
+      "converted_kcal": 313.1,
+      "conversion_note": "Converted from kJ to kcal: original 1310.0 kJ / 4.184 = 313.1 kcal (ratio was 4.13)"
+    },
+    {
+      "food_id": "everyday-115-pie-fillings-blueberry-canned",
+      "name": "Pie fillings, blueberry, canned",
+      "original_kj": 757.0,
+      "converted_kcal": 180.93,
+      "conversion_note": "Converted from kJ to kcal: original 757.0 kJ / 4.184 = 180.93 kcal (ratio was 4.18)"
+    },
+    {
+      "food_id": "everyday-116-pie-blueberry-commercially-prepared",
+      "name": "Pie, blueberry, commercially prepared",
+      "original_kj": 971.0,
+      "converted_kcal": 232.07,
+      "conversion_note": "Converted from kJ to kcal: original 971.0 kJ / 4.184 = 232.07 kcal (ratio was 4.1)"
+    },
+    {
+      "food_id": "everyday-124-bread-potato",
+      "name": "Bread, potato",
+      "original_kj": 1120.0,
+      "converted_kcal": 267.69,
+      "conversion_note": "Converted from kJ to kcal: original 1120.0 kJ / 4.184 = 267.69 kcal (ratio was 4.2)"
+    },
+    {
+      "food_id": "everyday-149-sweet-potato-leaves-raw",
+      "name": "Sweet potato leaves, raw",
+      "original_kj": 175.0,
+      "converted_kcal": 41.83,
+      "conversion_note": "Converted from kJ to kcal: original 175.0 kJ / 4.184 = 41.83 kcal (ratio was 3.51)"
+    },
+    {
+      "food_id": "everyday-156-tomato-products-canned-sauce-with-tomato",
+      "name": "Tomato products, canned, sauce, with tomato tidbits",
+      "original_kj": 134.0,
+      "converted_kcal": 32.03,
+      "conversion_note": "Converted from kJ to kcal: original 134.0 kJ / 4.184 = 32.03 kcal (ratio was 3.61)"
+    },
+    {
+      "food_id": "everyday-186-onions-welsh-raw",
+      "name": "Onions, welsh, raw",
+      "original_kj": 142.0,
+      "converted_kcal": 33.94,
+      "conversion_note": "Converted from kJ to kcal: original 142.0 kJ / 4.184 = 33.94 kcal (ratio was 3.82)"
+    },
+    {
+      "food_id": "everyday-193-garlic-bread-frozen",
+      "name": "Garlic bread, frozen",
+      "original_kj": 1460.0,
+      "converted_kcal": 348.95,
+      "conversion_note": "Converted from kJ to kcal: original 1460.0 kJ / 4.184 = 348.95 kcal (ratio was 4.18)"
+    },
+    {
+      "food_id": "everyday-196-pizza-hut-breadstick-parmesan-garlic",
+      "name": "PIZZA HUT, breadstick, parmesan garlic",
+      "original_kj": 1430.0,
+      "converted_kcal": 341.78,
+      "conversion_note": "Converted from kJ to kcal: original 1430.0 kJ / 4.184 = 341.78 kcal (ratio was 4.17)"
+    },
+    {
+      "food_id": "everyday-203-fast-foods-breadstick-soft-prepared-with",
+      "name": "Fast foods, breadstick, soft, prepared with garlic and parmesan cheese",
+      "original_kj": 1430.0,
+      "converted_kcal": 341.78,
+      "conversion_note": "Converted from kJ to kcal: original 1430.0 kJ / 4.184 = 341.78 kcal (ratio was 4.17)"
+    },
+    {
+      "food_id": "everyday-204-hormel-always-tender-pork-loin-filets-le",
+      "name": "HORMEL ALWAYS TENDER, Pork Loin Filets, Lemon Garlic-Flavored",
+      "original_kj": 492.0,
+      "converted_kcal": 117.59,
+      "conversion_note": "Converted from kJ to kcal: original 492.0 kJ / 4.184 = 117.59 kcal (ratio was 4.25)"
+    },
+    {
+      "food_id": "everyday-205-abiyuch-raw",
+      "name": "Abiyuch, raw",
+      "original_kj": 290.0,
+      "converted_kcal": 69.31,
+      "conversion_note": "Converted from kJ to kcal: original 290.0 kJ / 4.184 = 69.31 kcal (ratio was 3.75)"
+    }
+  ],
+  "flagged_records_count": 44,
+  "flagged_records": [
+    {
+      "food_id": "core-35-vegetable-biryani",
+      "name": "Vegetable Biryani",
+      "source": "macro_mitra_core",
+      "reported_protein": 8.0,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (8.0g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-a011-rice-flakes",
+      "name": "Rice, flakes",
+      "source": "ifct_2017_reference",
+      "reported_protein": 7.44,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (7.44g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-a012-rice-puffed",
+      "name": "Rice, puffed",
+      "source": "ifct_2017_reference",
+      "reported_protein": 7.47,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (7.47g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-a013-rice-raw-brown",
+      "name": "Rice, raw, brown",
+      "source": "ifct_2017_reference",
+      "reported_protein": 9.16,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (9.16g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-a014-rice-parboiled-milled",
+      "name": "Rice, parboiled, milled",
+      "source": "ifct_2017_reference",
+      "reported_protein": 7.81,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (7.81g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-a015-rice-raw-milled",
+      "name": "Rice, raw, milled",
+      "source": "ifct_2017_reference",
+      "reported_protein": 7.94,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (7.94g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-b023-ricebean",
+      "name": "Ricebean",
+      "source": "ifct_2017_reference",
+      "reported_protein": 19.97,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (19.97g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "ifct-n001-chicken-poultry-leg-skinless",
+      "name": "Chicken, poultry, leg, skinless",
+      "source": "ifct_2017_reference",
+      "reported_calories": 383.6,
+      "estimated_4_4_9_calories": 191.52,
+      "discrepancy_kcal": 192.08,
+      "ratio": 2.0,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "health-77-hyderabadi-biryani",
+      "name": "Hyderabadi Biryani",
+      "source": "existing_health_100g",
+      "reported_protein": 27.0,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (27.0g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "health-78-kolkata-biryani",
+      "name": "Kolkata Biryani",
+      "source": "existing_health_100g",
+      "reported_protein": 24.0,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (24.0g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "health-79-lucknowi-biryani",
+      "name": "Lucknowi Biryani",
+      "source": "existing_health_100g",
+      "reported_protein": 26.0,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (26.0g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "health-103-fried-rice",
+      "name": "Fried Rice",
+      "source": "existing_health_100g",
+      "reported_protein": 10.0,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (10.0g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "health-104-schezwan-rice",
+      "name": "Schezwan Rice",
+      "source": "existing_health_100g",
+      "reported_protein": 9.0,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (9.0g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "indb-69-clear-tomato-soup-tamatar-ka-soup",
+      "name": "Clear tomato soup (Tamatar ka soup)",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 80.07,
+      "estimated_4_4_9_calories": 142.94,
+      "discrepancy_kcal": 62.87,
+      "ratio": 0.56,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-70-lentil-soup",
+      "name": "Lentil soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 31.17,
+      "estimated_4_4_9_calories": 159.48,
+      "discrepancy_kcal": 128.31,
+      "ratio": 0.2,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-71-chicken-consomme-clear-chicken-soup",
+      "name": "Chicken consomme (Clear chicken soup)",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 47.94,
+      "estimated_4_4_9_calories": 158.82,
+      "discrepancy_kcal": 110.88,
+      "ratio": 0.3,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-72-cream-of-tomato-soup",
+      "name": "Cream of tomato soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 97.81,
+      "estimated_4_4_9_calories": 152.24,
+      "discrepancy_kcal": 54.43,
+      "ratio": 0.64,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-75-cream-of-mixed-vegetable-soup",
+      "name": "Cream of mixed vegetable soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 59.65,
+      "estimated_4_4_9_calories": 128.53,
+      "discrepancy_kcal": 68.88,
+      "ratio": 0.46,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-76-cream-of-mushroom-soup",
+      "name": "Cream of mushroom soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 117.28,
+      "estimated_4_4_9_calories": 181.02,
+      "discrepancy_kcal": 63.74,
+      "ratio": 0.65,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-77-chicken-sweet-corn-soup",
+      "name": "Chicken sweet corn soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 28.32,
+      "estimated_4_4_9_calories": 177.75,
+      "discrepancy_kcal": 149.43,
+      "ratio": 0.16,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-78-minestrone-soup",
+      "name": "Minestrone soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 42.66,
+      "estimated_4_4_9_calories": 151.85,
+      "discrepancy_kcal": 109.19,
+      "ratio": 0.28,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-79-egg-drop-soup",
+      "name": "Egg drop soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 26.64,
+      "estimated_4_4_9_calories": 177.8,
+      "discrepancy_kcal": 151.16,
+      "ratio": 0.15,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-81-french-onion-soup",
+      "name": "French onion soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 55.61,
+      "estimated_4_4_9_calories": 192.27,
+      "discrepancy_kcal": 136.66,
+      "ratio": 0.29,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-83-talaumein-soup",
+      "name": "Talaumein soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 35.63,
+      "estimated_4_4_9_calories": 172.18,
+      "discrepancy_kcal": 136.55,
+      "ratio": 0.21,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-85-cold-summer-garden-soup",
+      "name": "Cold summer garden soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 49.19,
+      "estimated_4_4_9_calories": 171.6,
+      "discrepancy_kcal": 122.41,
+      "ratio": 0.29,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-117-tamarind-rice-chintapandu-pulihora-puliy",
+      "name": "Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna)",
+      "source": "kaggle_indb_100g",
+      "reported_protein": 7.45,
+      "flagged_for_review": true,
+      "audit_note": "Suspicious vegetarian rice/pulao protein (7.45g/100g) without whole-food protein source."
+    },
+    {
+      "food_id": "indb-465-meat-consomme-with-mutton",
+      "name": "Meat consomme (with mutton)",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 29.76,
+      "estimated_4_4_9_calories": 184.6,
+      "discrepancy_kcal": 154.84,
+      "ratio": 0.16,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-466-consomme-au-julienne",
+      "name": "Consomme au julienne",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 27.76,
+      "estimated_4_4_9_calories": 151.86,
+      "discrepancy_kcal": 124.1,
+      "ratio": 0.18,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-467-consomme-au-vermicelli",
+      "name": "Consomme au vermicelli",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 29.94,
+      "estimated_4_4_9_calories": 182.94,
+      "discrepancy_kcal": 153.0,
+      "ratio": 0.16,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-468-green-pea-soup-matar-ka-soup",
+      "name": "Green pea soup (Matar ka soup)",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 39.81,
+      "estimated_4_4_9_calories": 174.86,
+      "discrepancy_kcal": 135.05,
+      "ratio": 0.23,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-469-spinach-soup-palak-ka-soup",
+      "name": "Spinach soup (Palak ka soup)",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 32.59,
+      "estimated_4_4_9_calories": 182.62,
+      "discrepancy_kcal": 150.03,
+      "ratio": 0.18,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-470-mixed-vegetable-soup",
+      "name": "Mixed vegetable soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 35.71,
+      "estimated_4_4_9_calories": 149.62,
+      "discrepancy_kcal": 113.91,
+      "ratio": 0.24,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-471-cheese-soup",
+      "name": "Cheese soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 41.13,
+      "estimated_4_4_9_calories": 210.67,
+      "discrepancy_kcal": 169.54,
+      "ratio": 0.2,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-472-mulligatawny-soup",
+      "name": "Mulligatawny soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 54.42,
+      "estimated_4_4_9_calories": 197.52,
+      "discrepancy_kcal": 143.1,
+      "ratio": 0.28,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-473-cream-of-carrot-soup",
+      "name": "Cream of carrot soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 59.77,
+      "estimated_4_4_9_calories": 166.99,
+      "discrepancy_kcal": 107.22,
+      "ratio": 0.36,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-474-cream-of-broccoli-soup",
+      "name": "Cream of broccoli soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 56.14,
+      "estimated_4_4_9_calories": 165.51,
+      "discrepancy_kcal": 109.37,
+      "ratio": 0.34,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-475-cream-of-potato-soup",
+      "name": "Cream of potato soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 60.2,
+      "estimated_4_4_9_calories": 165.41,
+      "discrepancy_kcal": 105.21,
+      "ratio": 0.36,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-476-almond-soup-badam-ka-soup",
+      "name": "Almond soup (Badam ka soup)",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 78.65,
+      "estimated_4_4_9_calories": 179.44,
+      "discrepancy_kcal": 100.79,
+      "ratio": 0.44,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-509-spaghetti-bolognese",
+      "name": "Spaghetti bolognese",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 97.43,
+      "estimated_4_4_9_calories": 163.15,
+      "discrepancy_kcal": 65.72,
+      "ratio": 0.6,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-914-curried-cauliflower-soup",
+      "name": "Curried Cauliflower soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 37.32,
+      "estimated_4_4_9_calories": 127.29,
+      "discrepancy_kcal": 89.97,
+      "ratio": 0.29,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-915-millet-soup",
+      "name": "Millet soup",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 55.99,
+      "estimated_4_4_9_calories": 191.05,
+      "discrepancy_kcal": 135.06,
+      "ratio": 0.29,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-930-classic-seasoned-black-beans",
+      "name": "Classic seasoned black beans",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 28.78,
+      "estimated_4_4_9_calories": 137.2,
+      "discrepancy_kcal": 108.42,
+      "ratio": 0.21,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "indb-940-brown-sauce",
+      "name": "Brown sauce",
+      "source": "kaggle_indb_100g",
+      "reported_calories": 109.18,
+      "estimated_4_4_9_calories": 282.23,
+      "discrepancy_kcal": 173.05,
+      "ratio": 0.39,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    },
+    {
+      "food_id": "everyday-34-orange-blossom",
+      "name": "Orange Blossom",
+      "source": "kaggle_everyday_150",
+      "reported_calories": 98.0,
+      "estimated_4_4_9_calories": 41.9,
+      "discrepancy_kcal": 56.1,
+      "ratio": 2.34,
+      "flagged_for_review": true,
+      "audit_note": "Energy discrepancy: reported calories diverge from (4*P + 4*C + 9*F). Likely an un-diluted stock recipe from Anuvaad INDB."
+    }
+  ]
+}
