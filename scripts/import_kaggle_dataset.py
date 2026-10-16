@@ -31,7 +31,6 @@ import csv
 import json
 import re
 import argparse
-import subprocess
 from typing import Dict, List, Any, Optional, Tuple, Set
 
 DATASET_A_HANDLE = "batthulavinay/indian-food-nutrition"
@@ -714,12 +713,7 @@ def load_ifct2017(repo_dir: Optional[str] = None) -> Tuple[List[Dict[str, Any]],
     desc_csv = os.path.join(repo_dir, "descriptions", "index.csv")
     
     if not os.path.exists(comp_csv):
-        print(f"[*] IFCT compositions index not found at {comp_csv}. Cloning https://github.com/nodef/ifct2017.git...")
-        os.makedirs(repo_dir, exist_ok=True)
-        try:
-            subprocess.run(["git", "clone", "--depth", "1", "https://github.com/nodef/ifct2017.git", repo_dir], check=True)
-        except Exception as e:
-            raise FileNotFoundError(f"Failed to clone IFCT 2017 reference repository: {e}")
+        raise FileNotFoundError(f"IFCT compositions index not found at: {comp_csv}")
         
     desc_map = {}
     if os.path.exists(desc_csv):

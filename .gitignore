@@ -21,9 +21,13 @@ env/
 venv/
 .venv/
 
-# Cloned reference dataset repositories (downloaded on demand)
+# Raw and generated datasets (do not upload to git)
 scripts/ifct2017_repo/
 .cache/
+calorie-app/public/data/merged_food_catalogue.json
+calorie-app/public/data/conflicts_audit.json
+calorie-app/public/data/nutrition_audit_log.json
+calorie-app/public/data/LICENSE_DATASETS.md
 
 # OS and IDE
 .DS_Store
